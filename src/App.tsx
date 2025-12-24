@@ -93,7 +93,7 @@ function AuthScreen() {
                     <h3 className="text-2xl font-bold text-white">Revolutionary Learning</h3>
                   </div>
                   <p className="text-gray-300">
-                    Experience education like never before with AI-powered tools, collaborative spaces, and immersive resources.
+                    Experience education like never before with collaborative spaces, immersive resources and rich features.
                   </p>
                 </div>
               </div>

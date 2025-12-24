@@ -42,7 +42,7 @@ export default function SignUp({ onToggle }: SignUpProps) {
         <div className="p-3 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl shadow-lg">
           <HomeIcon size={32} className="text-white" />
         </div>
-        <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">StudentHub</h1>
+        <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">EduSphere</h1>
       </div>
       <form onSubmit={handleSubmit} className="bg-white shadow-2xl rounded-2xl px-8 pt-8 pb-8 backdrop-blur-sm border border-gray-100">
         <h2 className="text-3xl font-bold mb-2 text-gray-900">Create Account</h2>
