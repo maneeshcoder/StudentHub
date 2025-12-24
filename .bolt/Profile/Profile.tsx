@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Mail, Edit2, Save, X, Briefcase, Star, Camera } from 'lucide-react';
-import { supabase, Profile as ProfileType } from '../../lib/supabase';
-import { useAuth } from '../../contexts/AuthContext';
+import { supabase, Profile as ProfileType } from '../../src/lib/supabase';
+import { useAuth } from '../../src/contexts/AuthContext';
 
 export default function Profile({ userId }: { userId?: string }) {
   const { user, profile: currentProfile } = useAuth();
@@ -241,8 +241,8 @@ export default function Profile({ userId }: { userId?: string }) {
                 <span>Skills</span>
               </h3>
               <div className="flex flex-wrap gap-3">
-                {profile.skills.length > 0 ? (
-                  profile.skills.map((skill, index) => (
+                {profile?.skills.length > 0 ? (
+                  profile?.skills.map((skill, index) => (
                     <span
                       key={index}
                       className="px-4 py-2 bg-gradient-to-r from-blue-100 to-blue-50 text-blue-700 rounded-full text-sm font-semibold border border-blue-200 shadow-sm"

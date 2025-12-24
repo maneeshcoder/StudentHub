@@ -1,8 +1,25 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+// tailwind.config.js
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        'spin-slow': 'spin-slow 20s linear infinite',
+        'spin-reverse': 'spin-reverse 1s linear infinite',
+      },
+      keyframes: {
+        'spin-slow': {
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(360deg)' },
+        },
+        'spin-reverse': {
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(-360deg)' },
+        },
+      },
+    },
   },
   plugins: [],
-};
+}

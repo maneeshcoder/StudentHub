@@ -7,12 +7,14 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 export interface Profile {
   id: string;
-  email: string;
-  full_name: string;
-  college_name: string;
-  skills: string[];
-  interests: string[];
-  profile_photo_url?: string;
+  email: string | null;
+  full_name: string | null;
+  college_name: string | null;
+  skills: string[] | null;
+  interests: string[] | null;
+  profile_photo_url?: string | null;
+  bio?: string | null;
+  location?: string | null;
   created_at: string;
 }
 
@@ -20,20 +22,28 @@ export interface Note {
   id: string;
   user_id: string;
   title: string;
-  description: string;
-  file_url: string;
-  subject: string;
+  description: string | null;
+  file_url: string | null;
+  subject: string | null;
+  like_count: number;
   created_at: string;
   profiles?: Profile;
 }
 
-export interface College {
+
+export interface Profile {
   id: string;
-  name: string;
-  description: string;
-  created_by: string;
+  email: string | null;
+  full_name: string | null;
+  college_name: string | null;
+  skills: string[] | null;
+  interests: string[] | null;
+  profile_photo_url?: string | null;
+  bio?: string | null;
+  location?: string | null;
   created_at: string;
 }
+
 
 export interface Community {
   id: string;
@@ -48,23 +58,30 @@ export interface TeamFinderPost {
   id: string;
   user_id: string;
   title: string;
-  description: string;
-  required_skills: string[];
-  team_size: number;
+  description: string | null;
+  required_skills: string[] | null;
+  team_size: number | null;
+  comment_count: number;
   created_at: string;
   profiles?: Profile;
 }
 
+
 export interface AnonymousPost {
   id: string;
   content: string;
+  comment_count: number;
   created_at: string;
-  comment_count?: number;
 }
+
 
 export interface AnonymousComment {
   id: string;
   post_id: string;
   content: string;
   created_at: string;
+  anonymous_comment_likes?: {
+    count: number;
+  }[];
 }
+
